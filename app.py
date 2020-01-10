@@ -15,9 +15,7 @@ api = Api(app)
 
 jwt = JWT(app, authenticate, identity) #Creates '/auth'
 
-@app.before_first_request
-def create_table():
-    db.create_all()
+
 
 
 api.add_resource(Store, '/store/<string:name>')
